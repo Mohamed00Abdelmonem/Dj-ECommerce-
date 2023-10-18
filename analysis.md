@@ -16,14 +16,22 @@ App Products
    - created_at
 
 
+
+
  - Categories
    - user
    - tilte
    - created_at
 
+
+
+
 - ProductImage
    - product
    - image
+
+
+
 
 - Reviews
    - product
@@ -31,3 +39,13 @@ App Products
    - review
    - rate
    - created_at        
+
+
+
+steps 
+ 1- create model 
+ 2- add template 
+ 3- add view 
+ 4- add urls
+
+ 
