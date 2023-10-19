@@ -43,9 +43,9 @@ App Products
 
 
 steps 
- 1- create model 
- 2- add template 
- 3- add view 
+ 1- create model --> True
+ 2- add template --> True 
+ 3- add view  ---> InProgress
  4- add urls
 
  
