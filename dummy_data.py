@@ -50,11 +50,11 @@ def seed_product(n):
 
 def seed_product_images(n):
     fake = Faker()
-    images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.webp', '6.webp', '7.jpg', '8.png', '9.png', '10.jpg', '11.jpg', '12.jpg', '13.png', '14.png', '15.jpg', '16.jpg', '17.png', '18.webp', '19.webp', '20.jpg', '21.jpg', '22.png', '23.jpeg', '24.jpeg' ,'25.jpeg', '26.jpeg', '27.png', '28.jpg']
+    images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg']
     for _ in range(n):
         ProductImages.objects.create(
-            product = Product.objects.get(id=random.randint(1,1100)),
-            image = f'product_images/{images[random.randint(0,27)]}'
+            product = Product.objects.get(id=random.randint(1,1020)),
+            image = f'product_images/{images[random.randint(0,20)]}'
         )
 
     print(f"Seed {n} images in product Successfully")
@@ -72,4 +72,4 @@ def seed_reviews(n):
     print(f"Seed {n} Reviews Successfully")
 
 
-seed_product(20)
+seed_product_images(1000)
