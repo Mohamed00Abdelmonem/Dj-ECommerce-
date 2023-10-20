@@ -5,7 +5,7 @@ django.setup()
 from faker import Faker
 import random
 from products.models import Categories, Product, ProductImages, Reviews
-
+from django.utils.text import slugify
 
 def seed_brand(n):
     fake = Faker()
@@ -17,18 +17,20 @@ def seed_brand(n):
     print(f"Seed {n} Categories Successfully")
 
 
+
+
+
+
 def seed_product(n):
     fake = Faker()
-    images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg', '22.jpg']
+    images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg', '21.jpg']
     size = ['XL', 'XXL', 'XXXL']
     color = ['Red', 'Black', 'White', 'Blue']
     additional_information = ['Weight 0.79 kg - Dimensions 110 x 33 x 100 cm - Materials 60% cotton', 'Weight 0.62 kg - Dimensions 80 x 31 x 100 cm - Materials 30% cotton']
 
 
-
-
     for _ in range(n):
-        Product.objects.create(
+        Product.objects.delete(
             name = fake.name(),
             image = f'products/{images[random.randint(0,21)]}',
             # flag = flags[random.randint(0, 2)],
@@ -42,10 +44,25 @@ def seed_product(n):
             description = fake.text(max_nb_chars=1000),
             quantity = random.randint(0,30),
             categore = Categories.objects.get(id=random.randint(1,10)),
-
         )
 
     print(f"Seed {n} Products Successfully")
+
+
+
+
+
+def update_product_slugs():
+    products = Product.objects.all()
+
+    for product in products:
+        new_slug = slugify(product.name)
+        product.slug = new_slug
+        product.save()
+
+    print("Updated slugs for all products successfully")
+
+
 
 
 
@@ -75,4 +92,4 @@ def seed_reviews(n):
     print(f"Seed {n} Reviews Successfully")
 
 
-seed_reviews(1000)
+update_product_slugs()
