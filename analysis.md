@@ -48,4 +48,10 @@ steps
  3- add view  ---> InProgress
  4- add urls
 
+
+today 
+ - update pagingtions 
+ - add slug
+ - add debug toboler
+ - using api in this product 
  
