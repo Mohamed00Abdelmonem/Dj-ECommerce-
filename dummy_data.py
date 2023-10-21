@@ -92,4 +92,4 @@ def seed_reviews(n):
     print(f"Seed {n} Reviews Successfully")
 
 
-update_product_slugs()
+seed_product_images(1000)
