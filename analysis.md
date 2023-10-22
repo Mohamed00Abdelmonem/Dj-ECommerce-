@@ -49,10 +49,10 @@ steps
  4- add urls
 
 
-today 
+to do for every day  
  - update pagingtions  --- True
  - add slug ---- True
  - add debug toboler --- True
  
- - using api in this product 
+ - using api in app product  --- True 
  
