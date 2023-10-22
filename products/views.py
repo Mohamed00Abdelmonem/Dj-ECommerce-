@@ -1,11 +1,25 @@
 from django.shortcuts import render
 from .models import Product, Reviews
 from django.views.generic import ListView, DetailView
+from django.db.models import Q  # for search
+
+
 
 class ProductList(ListView):
     model = Product
-    paginate_by = 20
+    template_name = 'product_list.html'  # Specify your template file
     context_object_name = 'data'
+    paginate_by = 20  # Number of items per page
+
+    def get_queryset(self):
+        search_product = self.request.GET.get('search')
+        if search_product:
+            # Use Q objects to perform a case-insensitive search on 'name'
+            return Product.objects.filter(Q(name__icontains=search_product)| Q(price__icontains=search_product))
+        else:
+            # If not searched, return all products ordered by creation date
+            return Product.objects.all().order_by("-created_at")
+
 
 
 class ProductDetail(DetailView):

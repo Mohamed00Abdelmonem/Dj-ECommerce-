@@ -50,8 +50,9 @@ steps
 
 
 today 
- - update pagingtions 
- - add slug
- - add debug toboler
+ - update pagingtions  --- True
+ - add slug ---- True
+ - add debug toboler --- True
+ 
  - using api in this product 
  
