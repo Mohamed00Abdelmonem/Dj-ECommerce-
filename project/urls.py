@@ -23,7 +23,11 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
+
+
+
     path('__debug__/', include(debug_toolbar.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 
 ]
 
