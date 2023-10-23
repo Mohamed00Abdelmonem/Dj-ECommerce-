@@ -14,8 +14,8 @@ class Categories(models.Model):
         return self.title
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super(Product, self).save(*args, **kwargs) 
+        self.slug = slugify(self.title)
+        super(Categories, self).save(*args, **kwargs) 
 
 class Product(models.Model):
     user = models.ForeignKey(User, related_name='product_user',on_delete=models.SET_NULL, null=True, blank=True)

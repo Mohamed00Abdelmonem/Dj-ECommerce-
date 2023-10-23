@@ -1,5 +1,7 @@
+from typing import Any
+from django.db import models
 from django.shortcuts import render
-from .models import Product, Reviews
+from .models import Product, Reviews , Categories
 from django.views.generic import ListView, DetailView
 from django.db.models import Q  # for search
 
@@ -36,3 +38,21 @@ class ProductDetail(DetailView):
         # دي كدا معناها هات المنتجات اللي الكاتيجري بتاعها موجود في المنج بتاعنا دلوقتي 
         context["related_products"] = Product.objects.filter(categore=self.get_object().categore)
         return context
+    
+
+class CategoryList(ListView):
+    model = Categories
+    context_object_name = 'objects'
+    paginate_by = 20
+     
+
+
+# class CategoryDetail(DetailView):
+#     model = Categories
+
+def CategoryDetail(request, slug):
+    categroy = Categories.objects.get(slug=slug)
+    products = Product.objects.filter(categore = categroy)
+    context = {'categroy':categroy,
+               'products':products}
+    return render(request, 'products/categories_detail.html', context)
