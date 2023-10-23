@@ -54,5 +54,9 @@ to do for every day
  - add slug ---- True
  - add debug toboler --- True
  
- - using api in app product  --- True 
+ - using api in app product  --- True
+
+ - understand api for product --->  
+ - starting in app setting ---> 
+ - 
  
