@@ -272,12 +272,12 @@
 							<div class="block2-txt-child1 flex-col-l ">
 								<!-- rating -->
 									<span class="fs-18 cl11">
-											<i class="zmdi zmdi-star"></i>
-											<i class="zmdi zmdi-star"></i>
-											<i class="zmdi zmdi-star-half"></i>
-											<i class="zmdi zmdi-star-half"></i>
-											<i class="zmdi zmdi-star-half"></i>
-								  (23)
+											<i class="zmdi zmdi-star{% if product.avg_rate > 0 %}{% else %}-half{% endif%}"></i>
+											<i class="zmdi zmdi-star{% if product.avg_rate > 1 %}{% else %}-half{% endif%}"></i>
+											<i class="zmdi zmdi-star{% if product.avg_rate > 2 %}{% else %}-half{% endif%}"></i>
+											<i class="zmdi zmdi-star{% if product.avg_rate > 3 %} {% else %}-half{% endif%}"></i>
+											<i class="zmdi zmdi-star{% if product.avg_rate > 4 %} {% else %}-half{% endif%}"></i>
+								  ({{product.review_product.all|length}})
 								</span>
 
 								<a href="product/{{product.slug}}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
