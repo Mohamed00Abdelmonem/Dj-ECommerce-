@@ -84,7 +84,7 @@ def seed_reviews(n):
     fake = Faker()
     for _ in range(n):
         Reviews.objects.create(
-            product = Product.objects.get(id=random.randint(43, 1040)),
+            product = Product.objects.get(id=random.randint(1020, 1081)),
             rate = random.randint(0,4) , 
             review = fake.text(max_nb_chars=250), 
         )
@@ -92,4 +92,4 @@ def seed_reviews(n):
     print(f"Seed {n} Reviews Successfully")
 
 
-seed_reviews(1000)
+# seed_reviews(100)
