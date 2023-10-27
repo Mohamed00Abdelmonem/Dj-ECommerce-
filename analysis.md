@@ -58,5 +58,52 @@ to do for every day
 
  - understand api for product --->  
  - starting in app setting ---> 
- - 
  
+
+
+ App Orders :
+   - Cart 
+   CART_STATUS = {
+    ('InProgress','InProgress'),
+    ('Completed','Completed'),
+}
+     - user 
+     - statud
+     - coupon
+     - total after coupon
+
+   - Cart_Detail
+     - Product Relationship
+     - Cart   Relationshi
+     - price_total ---- counter agrregate_function or custom
+
+<!-- 
+     - country_for_shipping 
+     - zip code country ----optional
+     - price_total ---- counter agrregate_function or custom
+     - coupon_code --- optional
+     - created_date  -->
+
+   - Order 
+     - cart
+     - status
+     - code 
+     - order time 
+     - delivery_time
+     - coupon 
+     - total_after_coupon
+
+
+   - OrderDetail
+     - order 
+     - product
+     - price
+     - quantity
+     - total 
+
+   - Coupon
+     - code 
+     - discount
+     <!-- - user  -->
+     - start_date
+     - end_date    
