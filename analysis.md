@@ -61,22 +61,31 @@ to do for every day
  
 
 __________________________________________________________
+user --- cart once , 
+cart --- products
+cart --- order 
+order ---- order_detail 
+order detail --- products in cart 
+
 
 
  App Orders :
+
    - Cart 
-   CART_STATUS = {
-    ('InProgress','InProgress'),
-    ('Completed','Completed'),
-}
+          CART_STATUS = {
+            ('InProgress','InProgress'),
+            ('Completed','Completed')}
+          
      - user 
-     - statud
+     - status
      - coupon
      - total after coupon
 
+
    - Cart_Detail
+     - Cart   Relationship
      - Product Relationship
-     - Cart   Relationshi
+     - quantity
      - price_total ---- counter agrregate_function or custom
 
 <!-- 
@@ -90,7 +99,7 @@ __________________________________________________________
      - cart
      - status
      - code 
-     - order time 
+     - order_time 
      - delivery_time
      - coupon 
      - total_after_coupon
@@ -98,10 +107,11 @@ __________________________________________________________
 
    - OrderDetail
      - order 
-     - product
-     - price
+     - cart_detail 
+     - old_price
      - quantity
      - total 
+
 
    - Coupon
      - code 

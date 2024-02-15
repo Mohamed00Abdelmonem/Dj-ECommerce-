@@ -1,0 +1,49 @@
+/* Custom CSS for Bootstrap pagination */
+
+/* Adjust the text color and font size for the page info */
+.page-info {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Style the pagination container */
+.pagination {
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Style the page links */
+.page-link {
+    padding: 5px 10px;
+    margin: 2px;
+    border: 1px solid #ddd;
+    background-color: #edf3d7;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.page-link.active {
+    background-color: #c8cbce;
+    color: #e1cccc;
+    border: 1px solid #d8dee5;
+}
+
+.page-link:hover {
+    background-color: #c8ceaa;
+}
+
+.page-link:focus {
+    outline: none;
+}
+
+.page-link:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.page-link:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
